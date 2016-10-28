@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model name="wf:workflowmodel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+ <imports>
+  <!-- Import Alfresco Dictionary Definitions -->
+  <import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d" />
+  <!-- Import Alfresco System Definitions -->
+  <import uri="http://www.alfresco.org/model/system/1.0" prefix="sys" />
+  <!-- Import Alfresco Content Domain Model Definitions -->
+  <import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+  <!-- Import User Model Definitions -->
+  <import uri="http://www.alfresco.org/model/user/1.0" prefix="usr" />
+  <import uri="http://www.alfresco.org/model/bpm/1.0" prefix="bpm" />
+ </imports>
+ <namespaces>
+  <namespace uri="http://www.alfresco.org/model/workflow/1.0" prefix="wf" />
+ </namespaces>
+ <types>
+ <type name="wf:BidFlow">
+   <parent>bpm:startTask</parent>
+
+   <mandatory-aspects>
+    <aspect>wf:workInfo</aspect>
+   </mandatory-aspects>
+
+  </type>
+  <type name="wf:TestFloweditors">
+   <parent>bpm:workflowTask</parent>
+
+  <!-- <overrides>
+
+    <property name="bpm:packageActionGroup">
+     <default>add_package_item_actions</default>
+    </property>
+
+   </overrides>
+ -->
+   <mandatory-aspects>
+   
+    <aspect>wf:workInfo</aspect>
+   </mandatory-aspects>
+  </type>
+  <type name="wf:TestFlowcontributors">
+   <parent>bpm:workflowTask</parent>
+
+   <overrides>
+
+    <property name="bpm:packageActionGroup">
+     <default>add_package_item_actions</default>
+    </property>
+
+   </overrides>
+
+   <mandatory-aspects>
+   
+    <aspect>wf:workInfo</aspect>
+   </mandatory-aspects>
+  </type>
+  
+  <type name="wf:TestFlowcollaborators">
+   <parent>bpm:workflowTask</parent>
+
+   <overrides>
+
+    <property name="bpm:packageActionGroup">
+     <default>add_package_item_actions</default>
+    </property>
+
+   </overrides>
+
+   <mandatory-aspects>
+    <aspect>wf:workInfo</aspect>
+   </mandatory-aspects>
+  </type>
+  <type name="wf:TestFlowcoordinators">
+   <parent>bpm:workflowTask</parent>
+
+   <overrides>
+
+    <property name="bpm:packageActionGroup">
+     <default>add_package_item_actions</default>
+    </property>
+
+   </overrides>
+
+   <mandatory-aspects>
+    <aspect>wf:workInfo</aspect>
+   </mandatory-aspects>
+  </type>  
+ 
+ </types>
+   <aspects>
+
+  <aspect name="wf:workInfo">
+   <properties>
+    <property name="wf:workDescription">
+     <type>d:text</type>
+     <mandatory>true</mandatory>
+    </property>
+   </properties>
+  </aspect>
+
+ </aspects>
+ 
+ </model>
